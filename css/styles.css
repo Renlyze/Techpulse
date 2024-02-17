@@ -1,0 +1,142 @@
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:#333333;
+  }
+.body{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#333333;
+    color:white;
+    font-size: 30px;
+    height:70px;
+    cursor: pointer;
+}
+.right{
+   width:105px;
+   margin-left: 200px;
+   font-weight: 700;
+   font-size: 24px;
+}
+.right:hover{
+    color:#CCCCCC;
+}
+.left{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 200px;
+    justify-content:space-between ;
+    width:140px;
+    color:#CCCCCC;
+    font-size: 20px;
+}
+.login:hover{
+    color:white;
+}
+.home{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 12px;
+    color: white;
+    height:70px;
+    font-weight: 600;
+    background-color: #000000;
+    border-radius: 5px;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+.center-text{
+    font-size: 63px;
+    text-align: center;
+    line-height: 65px;
+    font-weight: 600;
+}
+.center-buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    
+}
+.login-button,.signup-button{
+    border: none;
+    padding:10px 40px 10px 40px;
+    background-color: aqua;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    margin-right: 50px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.login-button:hover{
+    background-color: #3e8e41;
+
+}
+.signup-button:hover{
+    background-color: #008afb;
+}
+.login-button{
+    background-color: #5CB85C;
+}
+.signup-button{
+    background-color: #0275D8;
+}
+.bottom{
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top:50px;
+}
+.services-bottom{
+    font-size: 35px;
+    font-weight: 500;
+
+}
+.text-bottom{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.footer{
+   display: flex;
+   flex-direction: row;
+   background-color: #F5F5F5;
+   margin-top: 250px;
+    padding-left: 200px;
+    height: 70px;
+    align-items: center;
+    cursor: pointer;
+}
+.text-footer{
+    transition-duration: 0.4s;
+}
+.text-footer:hover{
+    font-weight: 500;
+}

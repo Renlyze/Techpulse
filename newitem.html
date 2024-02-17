@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/newitem.css">
+        <title>Inventory System - Add New Item</title>
+    </head>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+        
+    </script>
+</head>
+<body class="body">
+    <div class="header">
+
+        <div class="right">
+            <div class="logo-name" onclick="navigateTo('index.html')">TechPulse</div>
+        </div>
+        <div class="left">
+            <div class="home" onclick="navigateTo('index.html')">Home</div>
+            <div class="login" onclick="navigateTo('login.html')">Login</div>
+        </div>
+    </div>
+
+    <div class="top-text">
+        <div class="top-title">Add New Item</div>
+
+        <div id="error-message" style="color: red;"></div>
+
+        <div class="form">
+          <form action="php/newitem.php" method = "post">
+            <div class="container">
+              <label for="item-name"><b>Product Name</b></label>
+              <input type="text" name="product-name" required>
+            </div>
+            <div class="container">
+              <label for="product-id"><b>Product Id</b></label>
+              <input type="text" name="product-id" required>
+            </div>
+            <div class="container">
+                <label for="stock"><b>Stock</b></label>
+                <input type="text" name="stock" required>
+              </div>
+              <div class="container">
+                <label for="prices"><b>Prices ($)</b></label>
+                <input type="text" name="prices" required>
+              </div>
+            
+            <div class="bottom-form">
+              <button class="save" type="submit">Save</button>
+              <button class="cancel" onclick="navigateTo('index.html')">Cancel</button>
+            </div>
+          </form>
+        </div>
+  </div>
+    <div class="footer">
+      <div class="text-footer" onclick="navigateTo('index.html')">© TechPulse 2024</div>
+  </div>
+
+  <script>
+  
+  function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+    }
+
+    window.onload = function() {
+            const errorMessage = getQueryParam('error');
+            if (errorMessage === 'insertion_failed') {
+                document.getElementById('error-message').innerText = 'Error: Failed to insert item. Please try again.';
+            } else if (errorMessage === 'duplicate_product_id') {
+        document.getElementById('error-message').innerText = 'Error: Product ID already exists. Please use a different one.';
+    }
+      };
+</script>
+    
+</body>
+</html>

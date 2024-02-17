@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/register.css">
+        <title>Inventory System - Register</title>
+    </head>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+
+        function displayErrorMessage() {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('error')) {
+                    const error = urlParams.get('error');
+                    if (error === 'password_mismatch') {
+                        alert('Passwords do not match. Please try again.');
+                    } else if (error === 'registration_failed') {
+                        alert('Registration failed. Please try again.');
+                    }
+                }
+            }
+
+            window.onload = function() {
+                displayErrorMessage();
+            };
+        
+    </script>
+</head>
+<body class="body">
+    <div class="header">
+
+        <div class="right">
+            <div class="logo-name" onclick="navigateTo('index.html')">TechPulse</div>
+        </div>
+        <div class="left">
+            <div class="home" onclick="navigateTo('index.html')">Home</div>
+            <div class="login" onclick="navigateTo('login.html')">Login</div>
+        </div>
+    </div>
+
+    <div class="top-text">
+        <div class="top-title">Register</div>
+        <div class="bottom-title">Please fill out the following fields a register new user:</div>
+
+        <div class="form">
+            <form action = "php/register.php" method="post">
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+            </div>
+            <div class="container">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+            <div class="container">
+                <label for="confirm_pass"><b>Confirm<br>Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="confirm_pass" required>
+            </div>
+            <div class="container">
+                <label for="email_add"><b>Email<br>Address</b></label>
+                <input type="email" placeholder="Enter Email Address" name="email_add" required>
+            </div>
+        
+            <div class="bottom-form">
+                <button type="submit" class="login-2">Register</button>
+                <div class="cancel" onclick="navigateTo('index.html')">Cancel</div>
+            </div> 
+        </form>  
+        </div>
+    </div>
+    <div class="footer">
+        <div class="text-footer" onclick="navigateTo('index.html')">© TechPulse 2024</div>
+    </div>
+
+    </body>
+</html>
